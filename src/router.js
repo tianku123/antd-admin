@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Switch, Route, Redirect, routerRedux } from 'dva/router'
 import dynamic from 'dva/dynamic'
 import App from 'routes/app'
-import { LocaleProvider } from 'antd'
+import { LocaleProvider } from 'antd' // 国际化
 import enUS from 'antd/lib/locale-provider/en_US'
 
 const { ConnectedRouter } = routerRedux
@@ -20,11 +20,7 @@ const Routers = function ({ history, app }) {
       component: () => import('./routes/dashboard/'),
     }, {
       path: '/user',
-      models: () => [import('./models/user')],
-      component: () => import('./routes/user/'),
-    }, {
-      path: '/user/:id',
-      models: () => [import('./models/user/detail')],
+      models: () => [import('./models/user/customer')],
       component: () => import('./routes/user/detail/'),
     }, {
       path: '/login',

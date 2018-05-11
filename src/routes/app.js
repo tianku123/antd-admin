@@ -16,6 +16,7 @@ import './app.less'
 
 const { Content, Footer, Sider } = Layout
 const { Header, Bread, styles } = MyLayout
+// prefix: 'antdAdmin', openPages: ['/login'],
 const { prefix, openPages } = config
 
 let lastHref
@@ -28,6 +29,7 @@ const App = ({
   } = app
   let { pathname } = location
   pathname = pathname.startsWith('/') ? pathname : `/${pathname}`
+  // iconFontCSS: '/iconfont.css', iconFontJS: '/iconfont.js', logo: '/logo.svg',
   const { iconFontJS, iconFontCSS, logo } = config
   const current = menu.filter(item => pathToRegexp(item.route || '').exec(pathname))
   const hasPermission = current.length ? permissions.visit.includes(current[0].id) : false
